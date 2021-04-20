@@ -1,0 +1,192 @@
+
+<!-- saved from url=(0433)https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/305176178550165.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2TAWW44RDWPS6YGR%2F20210420%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210420T065415Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27D7.html&X-Amz-Signature=8fccc6372ebd61ead4f5c50680e1bb25366e12cd55edc11f922d1f8369b7d47d -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <script>
+      /* EXERCISE 1
+      Write a function for changing the title of the document in something else.
+      */
+
+      const changeTitle = function (newTitle) {
+        let parentTitle = document.getElementsByTagName('head')[0]
+        let title = document.createElement('title')
+        title.innerText = newTitle
+        parentTitle.appendChild(title)
+      };
+
+      /* EXERCISE 2
+      Write a function for changing the class of the title of the page in "myHeading".
+      */
+
+      const addClassToTitle = function () {
+        let titleClass = document.getElementsByTagName('h1')[0]
+        titleClass.classList.add("myHeading")
+      };
+
+      /* EXERCISE 3
+      Write a function for changing the text of only the p which are children of a div.
+      */
+
+      const changePcontent = function (newText) {
+        let pDiv = document.querySelector('div p')
+        pDiv.innerText = newText
+      };
+
+      /* EXERCISE 4
+      Write a function for changing the destination of every link to https://www.google.com
+      */
+
+      const changeUrls = function () {
+        let pageLinks = document.getElementsByTagName('a')
+        for(let i=0; i<pageLinks.length; i++){  //for loop; makes it generic in case there are more than one link
+          pageLinks[i].href = 'https://www.google.com'
+        }
+      };
+
+      /* EXERCISE 5
+       Write a function for adding a new item in the second list.
+       */
+
+      const addToTheSecond = function (content) {
+        let parentList = document.getElementById('secondList')
+        let newListElement = document.createElement('li')
+        newListElement.innerText = content
+        parentList.appendChild(newListElement)
+      };
+
+      /* EXERCISE 6
+      Write a function for adding a second paragraph to the div.
+      */
+
+      const addParagraph = function (content) {
+        let parentParagraph = document.querySelector('div')
+        let newParagraph = document.createElement('p')
+        newParagraph.innerText = content
+        parentParagraph.appendChild(newParagraph)
+      };
+
+      /* EXERCISE 7
+      Write a function for making the first UL disappear.
+      */
+
+      const firstUlDisappear = function () {
+        let firstUl = document.getElementById('firstList')
+        firstUl.style.display = 'none'
+      };
+
+      /* EXERCISE 8
+      Write a function for making the background of every UL green.
+      */
+
+      const paintItGreen = function () {
+        let ulElements = document.getElementsByTagName('ul')
+        for(let i=0; i<ulElements.length; i++){
+          ulElements[i].style.backgroundColor = 'green'
+        }
+      };
+
+      /* EXERCISE 9
+      Make the heading of the page change color every time the user clicks on it.
+      */
+
+      const makeItClickable = function () {
+        let heading = document.getElementsByTagName('header')[0]
+        heading.addEventListener('click', changeBackground)
+        
+      };
+
+      const changeBackground = function(){
+        let heading = document.getElementsByTagName('header')[0]
+        heading.style.backgroundColor = getRandomColor()
+      }
+        // getRandomColor generates a random color every time is called
+      const getRandomColor = function() { 
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+         }
+        return color;
+      }
+
+      /* EXERCISE 10
+      Change the footer text with something else when the user clicks on it.
+      */
+
+      const changeFooterText = function () {
+        let footer = document.getElementsByTagName('footer')[0]
+        footer.addEventListener('click', changeElement)
+      }
+
+      const changeElement = function(){  
+        let paragraphFooter = document.querySelector('footer p')
+        paragraphFooter.remove()
+        let imgFooter = document.createElement('img')
+        imgFooter.src = 'https://strive.school/assets/strive_logo02.png'
+        document.getElementsByTagName('footer')[0].appendChild(imgFooter)
+      }
+
+      /* EXERCISE 11
+      Attach an event listener to the input field in the page for console logging its value just after any keystroke.
+      */
+      
+      const inputField = document.getElementById("input-field")
+     
+      // ...
+
+      /* EXERCISE 12
+      Create a new welcome alert message when the page successfully loads.
+      */
+
+      window.onload = function () {
+        alert ('This is the Homework for day 7!! ')
+      };
+
+      /* EXERCISE 13
+      Use HTML5 tags to divide the content of the page in a more semantic way.
+      */
+    </script>
+
+    <style>
+      .myHeading {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>This is the title of the page</h1>
+      <h2>This is the subtitle of the page</h2>
+    </header>
+
+    <main>
+      <hr>
+
+      <ul id="firstList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <ul id="secondList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <a href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/strive.school">This link goes to Strive School</a>
+
+      <div>
+        <p>This text is just for the exercise</p>
+      </div>
+
+      <div>
+        <input type="text" id="input-field" placeholder="input field for the exercise">
+      </div>
+    </main>
+
+    <footer>
+      <p>And this text is just for the exercise too!</p>
+    </footer>
+  
+
+</body></html>
