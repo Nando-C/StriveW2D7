@@ -1,6 +1,49 @@
 
 <!-- saved from url=(0433)https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/305176178550165.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2TAWW44RDWPS6YGR%2F20210420%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210420T065415Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27D7.html&X-Amz-Signature=8fccc6372ebd61ead4f5c50680e1bb25366e12cd55edc11f922d1f8369b7d47d -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   
+    <style>
+      .myHeading {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>This is the title of the page</h1>
+      <h2>This is the subtitle of the page</h2>
+    </header>
+
+    <main>
+      <hr>
+
+      <ul id="firstList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <ul id="secondList">
+        <li>1st</li>
+        <li>2nd</li>
+        <li>3rd</li>
+      </ul>
+
+      <a href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/strive.school">This link goes to Strive School</a>
+
+      <div>
+        <p>This text is just for the exercise</p>
+      </div>
+
+      <div>
+        <input type="text" id="input-field" placeholder="input field for the exercise">
+      </div>
+    </main>
+
+    <footer>
+      <p>And this text is just for the exercise too!</p>
+    </footer>
+  
     <script>
       /* EXERCISE 1
       Write a function for changing the title of the document in something else.
@@ -130,6 +173,9 @@
       */
       
       const inputField = document.getElementById("input-field")
+      inputField.addEventListener("input", function(event){
+        console.log(event.target.value)
+      })
      
       // ...
 
@@ -145,48 +191,4 @@
       Use HTML5 tags to divide the content of the page in a more semantic way.
       */
     </script>
-
-    <style>
-      .myHeading {
-        color: red;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>This is the title of the page</h1>
-      <h2>This is the subtitle of the page</h2>
-    </header>
-
-    <main>
-      <hr>
-
-      <ul id="firstList">
-        <li>1st</li>
-        <li>2nd</li>
-        <li>3rd</li>
-      </ul>
-
-      <ul id="secondList">
-        <li>1st</li>
-        <li>2nd</li>
-        <li>3rd</li>
-      </ul>
-
-      <a href="https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/strive.school">This link goes to Strive School</a>
-
-      <div>
-        <p>This text is just for the exercise</p>
-      </div>
-
-      <div>
-        <input type="text" id="input-field" placeholder="input field for the exercise">
-      </div>
-    </main>
-
-    <footer>
-      <p>And this text is just for the exercise too!</p>
-    </footer>
-  
-
 </body></html>
